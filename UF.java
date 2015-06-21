@@ -14,18 +14,6 @@ public class UF{
         return (id[p] == id[q]) ? true : false;
     }
     
-    private static int[] find(int key){
-        int[] ints = new int[id.length];
-        //List<Integer> ints = new ArrayList<Integer>();
-        for(int i = 0,j = 0;i< id.length ; i++){
-            if( key == id[i]){
-                ints[j]= i;
-                j++;
-            }
-        }
-        return ints;
-    }
-    
     private static void getUnion(int p, int q){
         
         id[p] = id[q];
