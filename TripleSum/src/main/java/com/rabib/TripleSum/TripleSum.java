@@ -14,22 +14,19 @@ public class TripleSum
 {
 	public static void main(String[] args) throws IOException {
 
-		InputStream inputStream = TripleSum.class.getResourceAsStream("/tinyUF.txt");
+		InputStream inputStream = TripleSum.class.getResourceAsStream("/8ints.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-		int N = Integer.parseInt(reader.readLine()), first, second;
+		int N = Integer.parseInt(reader.readLine());
 		
 		int counter = 0;
 		String temp;
 		while (counter < N) {
 			temp = reader.readLine();
-			first = Integer.parseInt(temp.split(" ")[0]);
-			second = Integer.parseInt(temp.split(" ")[1]);
-			if (uf.isconnect(first, second) == false) {
-				uf.union(first, second);
+			for(String s:temp.split(" "))
+			{
+				System.out.println(s);
 			}
-			System.out.println(first + " " + second);
-			uf.displayL();
-
+			
 			counter++;
 		}
 
