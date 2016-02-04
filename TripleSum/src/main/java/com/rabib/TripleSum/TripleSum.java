@@ -12,26 +12,20 @@ import java.io.InputStreamReader;
  */
 public class TripleSum 
 {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, NullPointerException {
 
 		InputStream inputStream = TripleSum.class.getResourceAsStream("/8ints.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 		int N = Integer.parseInt(reader.readLine());
-		
-		int counter = 0;
-		String temp;
-		while (counter < N) {
-			temp = reader.readLine();
-			for(String s:temp.split(" "))
+		int[] number = new int[N];
+		int counter =0;
+			String inputNumbers = reader.readLine();
+			for(String s:inputNumbers.split(" "))
 			{
+				number[counter] = Integer.parseInt(s);
 				System.out.println(s);
-			}
-			
-			counter++;
-		}
-
-		// String theString = IOUtils.toString(inputStream, "UTF-8");
-		// System.out.println("Hello World!" + theString);
+			}	
+		
 
 	}
 }
