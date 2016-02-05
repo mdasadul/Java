@@ -24,7 +24,7 @@ public class TripleSum
 				}
 			}
 		}
-		System.out.println(total);
+		
 		return total;
 	}
 	public static void main(String[] args) throws IOException, NullPointerException {
@@ -38,9 +38,11 @@ public class TripleSum
 			for(String s:inputNumbers.split(" "))
 			{
 				number[counter] = Integer.parseInt(s);
-				System.out.println(s);
+				System.out.println(number[counter]);
+				counter++;
 			}	
-		System.out.println(count(number));
+		
+		System.out.println("Total=" +count(number));
 
 	}
 }
