@@ -13,8 +13,17 @@ import java.io.InputStreamReader;
 public class TripleSum 
 {
 	public int count(int[] numbers) {
-		int total = 0;
-		
+		int total = 0,N=numbers.length;
+		for(int i =0;i<N;i++) {
+			for(int j=0; j<N; ++j) {
+				for(int k=0;k<N;++k)
+				{
+					if(numbers[i]+numbers[j]+numbers[k] ==0) {
+						total+=1;
+					}
+				}
+			}
+		}
 		return total;
 	}
 	public static void main(String[] args) throws IOException, NullPointerException {
