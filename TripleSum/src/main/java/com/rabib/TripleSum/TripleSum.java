@@ -15,8 +15,8 @@ public class TripleSum
 	public static int count(int[] numbers) {
 		int total = 0,N=numbers.length;
 		for(int i =0;i<N;i++) {
-			for(int j=0; j<N; ++j) {
-				for(int k=0;k<N;++k)
+			for(int j=i+1; j<N; ++j) {
+				for(int k=j+1;k<N;++k)
 				{
 					if(numbers[i]+numbers[j]+numbers[k] ==0) {
 						total +=1;
