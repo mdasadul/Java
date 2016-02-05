@@ -12,6 +12,11 @@ import java.io.InputStreamReader;
  */
 public class TripleSum 
 {
+	public int count(int[] numbers) {
+		int total = 0;
+		
+		return total;
+	}
 	public static void main(String[] args) throws IOException, NullPointerException {
 
 		InputStream inputStream = TripleSum.class.getResourceAsStream("/8ints.txt");
