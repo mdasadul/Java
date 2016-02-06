@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 
 /**
@@ -13,14 +14,23 @@ import java.io.InputStreamReader;
 public class TripleSum 
 {
 	public static int count(int[] numbers) {
-		int total = 0,N=numbers.length;
+		int total = 0,N=numbers.length,a,b,c;
 		for(int i =0;i<N;i++) {
-			for(int j=i+1; j<N; ++j) {
-				for(int k=j+1;k<N;++k)
-				{
-					if(numbers[i]+numbers[j]+numbers[k] ==0) {
-						total +=1;
-					}
+			a=numbers[i];
+			int start = i+1, end= N-1;
+			
+			while(start<end) {
+				b= numbers[start];
+				c = numbers[end];
+				if(a+b+c ==0) {
+					System.out.println(a+" "+b+" "+c);
+					total++;
+					start++;
+					end--;
+				}else if(a+b+c<0) {
+					start++;
+				}else {
+					end--;
 				}
 			}
 		}
@@ -41,7 +51,7 @@ public class TripleSum
 				System.out.println(number[counter]);
 				counter++;
 			}	
-		
+		Arrays.sort(number);
 		System.out.println("Total=" +count(number));
 
 	}
