@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 
 /**
- * Hello world!
+ * Solving triple sum problem with complexity N^2
  *
  */
 public class TripleSum 
