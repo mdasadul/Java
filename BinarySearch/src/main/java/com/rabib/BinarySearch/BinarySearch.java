@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 /**
  * Binary Search
- *
+ * Recursive and Iterative way
  */
 public class BinarySearch {
 
