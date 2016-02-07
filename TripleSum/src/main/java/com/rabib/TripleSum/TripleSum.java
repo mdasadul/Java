@@ -13,6 +13,34 @@ import java.util.Arrays;
  */
 public class TripleSum 
 {
+	private static int recursiveBinSearch(int[] array, int key, int lo, int hi) {
+		while (lo <= hi) {
+			int mid = (hi + lo) / 2;
+			if (array[mid] < key) {
+				return recursiveBinSearch(array, key, mid + 1, hi);
+			} else if (array[mid] > key) {
+				return recursiveBinSearch(array, key, lo, mid - 1);
+			} else
+				return mid;
+		}
+		return -1;
+	}
+	
+	private static int triplesum(int[] array) {
+		int total = 0,N =array.length,a,b,c;
+		for(int i =0;i<N;i++) {
+			for(int j = i+1;j<N;j++) {
+				a = array[i];
+				b = array[j];
+				c = -(a+b);
+				if(recursiveBinSearch(array,c,j+1,N-1) > -1) {
+					System.out.println(a +" "+b+" "+c);
+					total++;
+				}
+			}
+		}
+		return total;
+	}
 	public static int count(int[] numbers) {
 		int total = 0,N=numbers.length,a,b,c;
 		for(int i =0;i<N;i++) {
@@ -52,7 +80,9 @@ public class TripleSum
 				counter++;
 			}	
 		Arrays.sort(number);
-		System.out.println("Total=" +count(number));
+		System.out.println("n^2 triple sum  Total=" +count(number));
+
+		System.out.println("n^2 lon n triple sum Total="+triplesum(number));
 
 	}
 }
