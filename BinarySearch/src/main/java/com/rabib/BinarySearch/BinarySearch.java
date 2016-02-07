@@ -12,6 +12,19 @@ import java.util.Arrays;
  */
 public class BinarySearch {
 
+	private static int recursiveBinSearch(int[] array, int key, int lo, int hi) {
+		while (lo <= hi) {
+			int mid = (hi + lo) / 2;
+			if (array[mid] < key) {
+				recursiveBinSearch(array, key, mid + 1, hi);
+			} else if (array[mid] > key) {
+				recursiveBinSearch(array, key, lo, mid - 1);
+			} else
+				return mid;
+		}
+		return -1;
+	}
+
 	private static int search(int[] array, int key) {
 
 		int beg = 0, end = array.length - 1;
@@ -42,7 +55,7 @@ public class BinarySearch {
 		}
 		Arrays.sort(number);
 		int key = 30;
-		System.out.println("Total=" + search(number, key));
+		System.out.println("Total=" + search(number, key) + " " + recursiveBinSearch(number, key, 0, N - 1));
 
 	}
 
