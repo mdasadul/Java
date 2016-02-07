@@ -13,22 +13,19 @@ import java.util.Arrays;
 public class BinarySearch {
 
 	private static int search(int[] array, int key) {
-		int index = -1;
-		int beg = 0, end = array.length -1;
-		while(beg<end) {
-			int mid = (beg+end)/2;
-			if(array[mid] <key) {
-				beg = mid +1;
-			}else if(array[mid]>key) {
-				end = mid -1;
-			}else if(array[mid] ==key) {
-				index = mid;
-				break;
-						
-			}
-			
+
+		int beg = 0, end = array.length - 1;
+		while (beg <= end) {
+			int mid = beg + (end - beg) / 2;
+			if (array[mid] < key) {
+				beg = mid + 1;
+			} else if (array[mid] > key) {
+				end = mid - 1;
+			} else
+				return mid;
+
 		}
-		return index;
+		return -1;
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
