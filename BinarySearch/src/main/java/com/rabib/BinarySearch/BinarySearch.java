@@ -16,9 +16,9 @@ public class BinarySearch {
 		while (lo <= hi) {
 			int mid = (hi + lo) / 2;
 			if (array[mid] < key) {
-				recursiveBinSearch(array, key, mid + 1, hi);
+				return recursiveBinSearch(array, key, mid + 1, hi);
 			} else if (array[mid] > key) {
-				recursiveBinSearch(array, key, lo, mid - 1);
+				return recursiveBinSearch(array, key, lo, mid - 1);
 			} else
 				return mid;
 		}
