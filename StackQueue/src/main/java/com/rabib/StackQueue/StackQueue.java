@@ -6,46 +6,49 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-
 /**
  * Hello world!
  *
  */
-public class StackQueue 
-{
-	private Node first;
-	private class Node{
+public class StackQueue {
+	private Node first = null;
+
+	private class Node {
 		String item;
 		Node next;
 	}
+
+	private boolean isEmpty() {
+		return first == null;
+	}
+
 	public void push(String item) {
 		Node newnode = first;
 		first = new Node();
 		first.item = item;
 		first.next = newnode;
 	}
-	
+
 	public String pop() {
 		String item = first.item;
 		first = first.next;
 		return item;
 	}
-    public static void main( String[] args ) throws NumberFormatException, IOException
-    {
-    	InputStream inputStream = StackQueue.class.getResourceAsStream("/8ints.txt");
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		InputStream inputStream = StackQueue.class.getResourceAsStream("/8ints.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 		int N = Integer.parseInt(reader.readLine());
 		int[] number = new int[N];
-		int counter =0;
-			String inputNumbers = reader.readLine();
-			for(String s:inputNumbers.split(" "))
-			{
-				number[counter] = Integer.parseInt(s);
-				System.out.println(number[counter]);
-				counter++;
-			}	
+		int counter = 0;
+		String inputNumbers = reader.readLine();
+		for (String s : inputNumbers.split(" ")) {
+			number[counter] = Integer.parseInt(s);
+			System.out.println(number[counter]);
+			counter++;
+		}
 		Arrays.sort(number);
-		
+
 	}
-    
+
 }
