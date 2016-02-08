@@ -13,13 +13,19 @@ import java.util.Arrays;
  */
 public class StackQueue 
 {
+	private Node first;
 	private class Node{
 		String item;
 		Node next;
 	}
 	public void push(String item) {
-		
+		Node newnode = first;
+		first = new Node();
+		first.item = item;
+		first.next = newnode;
 	}
+	
+	
     public static void main( String[] args ) throws NumberFormatException, IOException
     {
     	InputStream inputStream = StackQueue.class.getResourceAsStream("/8ints.txt");
