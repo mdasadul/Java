@@ -25,7 +25,11 @@ public class StackQueue
 		first.next = newnode;
 	}
 	
-	
+	public String pop() {
+		String item = first.item;
+		first = first.next;
+		return item;
+	}
     public static void main( String[] args ) throws NumberFormatException, IOException
     {
     	InputStream inputStream = StackQueue.class.getResourceAsStream("/8ints.txt");
