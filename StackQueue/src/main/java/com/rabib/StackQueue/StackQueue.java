@@ -36,19 +36,16 @@ public class StackQueue {
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		InputStream inputStream = StackQueue.class.getResourceAsStream("/8ints.txt");
+		InputStream inputStream = StackQueue.class.getResourceAsStream("/input.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-		int N = Integer.parseInt(reader.readLine());
-		int[] number = new int[N];
-		int counter = 0;
+		StackQueue object = new StackQueue();
 		String inputNumbers = reader.readLine();
 		for (String s : inputNumbers.split(" ")) {
-			number[counter] = Integer.parseInt(s);
-			System.out.println(number[counter]);
-			counter++;
+			object.push(s);
+			System.out.println(object.pop());
+			
 		}
-		Arrays.sort(number);
-
+		
 	}
 
 }
