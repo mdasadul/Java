@@ -34,6 +34,12 @@ public class StackQueue {
 		first = first.next;
 		return item;
 	}
+	private void travarse() {
+		Node node=first;
+		while(node!=null) {
+			System.out.println(node.item);
+		}
+	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		InputStream inputStream = StackQueue.class.getResourceAsStream("/input.txt");
