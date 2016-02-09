@@ -13,16 +13,23 @@ import java.io.InputStreamReader;
 public class StackOfString {
 	private Node first = null;
 	private String[] array;
+	private int top;
 	
 	StackOfString(int N){
 		array = new String[N];
+		top =0;
 	}
 	
 	private void arrayPush(String item) {
-		int top = array.length;
 		array[top]=item;
+		top++;
 	}
 	
+	private String arrayPop() {
+		top--;
+		
+		return array[top];
+	}
 	
 	private class Node {
 		String item;
@@ -57,14 +64,17 @@ public class StackOfString {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		InputStream inputStream = StackOfString.class.getResourceAsStream("/input.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-		StackOfString object = new StackOfString();
+	
 		String inputNumbers = reader.readLine();
+		StackOfString object = new StackOfString(inputNumbers.length());
 		for (String s : inputNumbers.split(" ")) {
 			object.push(s);
-			//System.out.println(object.pop());
+			object.arrayPush(s);
+			
+			System.out.println(object.arrayPop());
 			
 		}
-		object.travarse();
+		//object.travarse();
 	}
 
 }
