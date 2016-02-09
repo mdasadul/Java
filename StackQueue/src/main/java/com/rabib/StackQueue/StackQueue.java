@@ -38,6 +38,7 @@ public class StackQueue {
 		Node node=first;
 		while(node!=null) {
 			System.out.println(node.item);
+			node = node.next;
 		}
 	}
 
@@ -48,10 +49,10 @@ public class StackQueue {
 		String inputNumbers = reader.readLine();
 		for (String s : inputNumbers.split(" ")) {
 			object.push(s);
-			System.out.println(object.pop());
+			//System.out.println(object.pop());
 			
 		}
-		
+		object.travarse();
 	}
 
 }
