@@ -21,13 +21,30 @@ public class StackOfString {
 	}
 	
 	private void arrayPush(String item) {
-		array[top]=item;
-		top++;
+		if(top ==array.length) {
+			resize(2*array.length);
+		}
+		array[top++]=item;
+		
 	}
 	
+	private void resize(int i) {
+		// TODO Auto-generated method stub
+		
+		String[] temp= new String[i];
+		
+		for(int j =0;j<top;j++) {
+			temp[j] = array[j];
+		}
+		array = temp;
+	}
+
 	private String arrayPop() {
-		String item =array[top--];
+		String item =array[--top];
 		array[top] = null;
+		if(top>0&&array.length/4==top) {
+			resize(array.length/2);
+		}
 		return item;
 	}
 	
