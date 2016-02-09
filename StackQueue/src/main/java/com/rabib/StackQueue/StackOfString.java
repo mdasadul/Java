@@ -26,9 +26,9 @@ public class StackOfString {
 	}
 	
 	private String arrayPop() {
-		top--;
-		
-		return array[top];
+		String item =array[top--];
+		array[top] = null;
+		return item;
 	}
 	
 	private class Node {
