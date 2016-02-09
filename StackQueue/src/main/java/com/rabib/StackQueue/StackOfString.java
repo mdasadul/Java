@@ -10,7 +10,7 @@ import java.util.Arrays;
  * Hello world!
  *
  */
-public class StackQueue {
+public class StackOfString {
 	private Node first = null;
 
 	private class Node {
@@ -43,9 +43,9 @@ public class StackQueue {
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		InputStream inputStream = StackQueue.class.getResourceAsStream("/input.txt");
+		InputStream inputStream = StackOfString.class.getResourceAsStream("/input.txt");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-		StackQueue object = new StackQueue();
+		StackOfString object = new StackOfString();
 		String inputNumbers = reader.readLine();
 		for (String s : inputNumbers.split(" ")) {
 			object.push(s);
