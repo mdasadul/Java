@@ -4,10 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+
 
 /**
- * Hello world!
+ * Stack of String
  *
  */
 public class StackOfString {
@@ -18,6 +18,7 @@ public class StackOfString {
 		Node next;
 	}
 
+	@SuppressWarnings("unused")
 	private boolean isEmpty() {
 		return first == null;
 	}
