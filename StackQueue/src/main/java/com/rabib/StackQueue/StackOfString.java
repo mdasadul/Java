@@ -12,7 +12,18 @@ import java.io.InputStreamReader;
  */
 public class StackOfString {
 	private Node first = null;
-
+	private String[] array;
+	
+	StackOfString(int N){
+		array = new String[N];
+	}
+	
+	private void arrayPush(String item) {
+		int top = array.length;
+		array[top]=item;
+	}
+	
+	
 	private class Node {
 		String item;
 		Node next;
