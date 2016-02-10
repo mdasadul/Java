@@ -79,10 +79,9 @@ public class StackOfString {
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		InputStream inputStream = StackOfString.class.getResourceAsStream("/input.txt");
-		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-	
-		String inputNumbers = reader.readLine();
+		
+		ReadInput inpObj = new ReadInput("input.txt");
+		String inputNumbers = inpObj.getInputs();
 		StackOfString object = new StackOfString(inputNumbers.length());
 		for (String s : inputNumbers.split(" ")) {
 			object.push(s);
