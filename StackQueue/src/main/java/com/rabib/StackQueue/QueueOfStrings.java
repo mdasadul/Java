@@ -8,16 +8,26 @@ import java.io.InputStreamReader;
 public class QueueOfStrings {
 	private String[] array;
 	private int front, rear;
-	
-	private class Node{
+
+	private class Node {
 		String item;
 		Node front, rear;
 	}
+
 	QueueOfStrings(int N) {
+		front = 0;
+		rear =0;
 		array = new String[N];
 	}
+
 	private void enqueue(String item) {
-		
+
+		array[front++] = item;
+	}
+
+	private String dequeue() {
+
+		return array[rear++];
 	}
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -25,12 +35,12 @@ public class QueueOfStrings {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
 		String inputNumbers = reader.readLine();
-		StackOfString object = new StackOfString(inputNumbers.length());
+		QueueOfStrings object = new QueueOfStrings(inputNumbers.length());
 		for (String s : inputNumbers.split(" ")) {
-			object.push(s);
-			object.arrayPush(s);
+			object.enqueue(s);
+			// object.arrayPush(s);
 
-			System.out.println(object.arrayPop());
+			System.out.println(object.dequeue());
 
 		}
 		// object.travarse();
