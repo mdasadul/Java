@@ -24,6 +24,9 @@ public class QueueOfStrings {
 
 		array[front++] = item;
 	}
+	private boolean isEmpty() {
+		return front==rear;
+	}
 
 	private String dequeue() {
 
