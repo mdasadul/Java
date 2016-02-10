@@ -16,8 +16,6 @@ public class LinkedQueueOfString {
 	private void enqueue(String item) {
 		Node node = new Node();
 		node.item = item;
-		
-		
 		if(rear !=null) {
 			rear.next = node;
 		}
@@ -28,6 +26,7 @@ public class LinkedQueueOfString {
 		}
 		
 	}
+	
 	private String dequeue() {
 		String item = front.item;
 		front =front.next;
