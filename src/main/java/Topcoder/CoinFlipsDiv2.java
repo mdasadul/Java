@@ -1,3 +1,4 @@
+package Topcoder;
 
 public class CoinFlipsDiv2 {
 	public int countCoins(String state) {
