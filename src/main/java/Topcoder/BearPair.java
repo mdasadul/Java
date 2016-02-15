@@ -2,6 +2,15 @@ package Topcoder;
 
 public class BearPair {
 
+	public class Solution {
+	    public int singleNumber(int[] nums) {
+	        int a=nums[0];
+	        for(int i=1;i<nums.length;i++){
+	            a ^= nums[i];
+	        }
+	        return a;
+	    }
+	}
 	public int bigDistance(String s) {
 		int distance = -1,  start = 0, end = s.length() - 1;
 		
