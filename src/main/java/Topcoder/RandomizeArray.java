@@ -1,5 +1,8 @@
 package Topcoder;
-
+/****
+ * randomly order the array element 
+ * running time is O(n)
+ */
 import java.util.Random;
 
 public class RandomizeArray {
@@ -9,7 +12,6 @@ public class RandomizeArray {
 		Random rnd = new Random();
 		for (int i = array.length - 1; i > 0; i--) {
 			int index = rnd.nextInt(i);
-			//System.out.println(index);
 			int temp = array[i];
 			array[i] = array[index];
 			array[index]= temp;
