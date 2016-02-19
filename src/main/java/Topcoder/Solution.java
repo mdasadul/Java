@@ -6,7 +6,6 @@ package Topcoder;
  * */
 public class Solution {
     public boolean containsDuplicate(int[] nums) {
-        int a=0;
         if(nums.length <=1) return false;
         int max = nums[0];
         int min =nums[0];
